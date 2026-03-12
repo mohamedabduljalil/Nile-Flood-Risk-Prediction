@@ -1,59 +1,256 @@
-# 🌊 NileGuard AI: Flood Risk Prediction in the Nile Basin
+# 🌍 AI for Climate Change
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
-![Scikit-Learn](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange.svg)
-![MLflow](https://img.shields.io/badge/MLOps-MLflow-blue)
-![Streamlit](https://img.shields.io/badge/Deployment-Streamlit-red.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+## Flood Risk Prediction in the Nile Basin
 
-## 📌 Project Overview
-[cite_start]This project aims to develop a machine learning-based early warning system to predict the risk level of extreme flooding events across the Nile Basin, with a specific focus on Egypt[cite: 582]. 
-
-[cite_start]By analyzing high-resolution climate data under different global warming scenarios (RCP 4.5 and RCP 8.5), the system classifies the risk of upcoming weather events into **Low, Medium, or High Risk** based on Probable Maximum Precipitation (PMP) thresholds[cite: 584, 585]. [cite_start]The final deliverable is an interactive web application that provides real-time flood risk predictions[cite: 586].
+A machine learning-based early warning system designed to predict **extreme flood risk events** in the **Nile Basin**, with a focus on **Egypt**, using high-resolution climate datasets and advanced machine learning models.
 
 ---
 
-## 📊 The Dataset
-[cite_start]The project leverages high-resolution **CORDEX climate data** provided by the **Nile Basin Initiative (NBI)**[cite: 583]. The dataset includes historical and projected climate variables (1971–2095) such as:
-* [cite_start]**`pr`**: Daily precipitation[cite: 584].
-* [cite_start]**`tasmax` & `tasmin`**: Maximum and minimum daily temperatures[cite: 584].
-* [cite_start]**`IDF` & `PMP`**: Intensity-Duration-Frequency curves and Probable Maximum Precipitation thresholds used for risk classification[cite: 585].
+# 📌 Project Overview
+
+Climate change is increasing the frequency and intensity of extreme weather events such as **heavy rainfall and floods**. Predicting these events early can significantly help governments and infrastructure planners mitigate risks.
+
+This project develops a **Machine Learning classification system** capable of predicting **flood risk levels** based on climate variables including precipitation and temperature.
+
+The system analyzes historical and projected climate data under different **climate change scenarios** and classifies flood risk into:
+
+* 🟢 Low Risk
+* 🟡 Medium Risk
+* 🔴 High Risk
+
+The final model will be deployed through an **interactive web application** that allows users to input climate conditions and receive **real-time flood risk predictions**.
 
 ---
 
-## 🛠️ Tools & Technologies
-* [cite_start]**Data Engineering & Processing:** SQL, Python, Pandas, NumPy[cite: 602, 603].
-* [cite_start]**Exploratory Data Analysis (EDA):** Matplotlib, Seaborn[cite: 604].
-* [cite_start]**Machine Learning:** Scikit-Learn, Random Forest, XGBoost[cite: 605].
-* [cite_start]**MLOps & Tracking:** MLflow[cite: 605].
-* [cite_start]**Deployment:** Streamlit / Gradio, Hugging Face Spaces[cite: 606].
+# 🌊 Data Source
+
+The project uses **CORDEX Climate Data** provided by the **Nile Basin Initiative (NBI)**.
+
+Dataset includes:
+
+* Daily precipitation (`pr`)
+* Maximum temperature (`tasmax`)
+* Minimum temperature (`tasmin`)
+
+Climate projections are analyzed under the following scenarios:
+
+* **RCP 4.5** – Moderate climate change scenario
+* **RCP 8.5** – High emission scenario
+
+These datasets allow the model to study the potential impact of **future climate conditions on flood risks**.
 
 ---
 
-## 🚀 Project Pipeline & Milestones
-1.  [cite_start]**Data Extraction:** Querying and structuring CORDEX climate datasets via SQL[cite: 608].
-2.  [cite_start]**Data Cleaning & EDA:** Handling missing values, analyzing rainfall distributions, and finding climate correlations[cite: 609].
-3.  [cite_start]**Feature Engineering:** Creating derived climate indicators and setting up the target variable (`Flood_Risk`)[cite: 610].
-4.  [cite_start]**Modeling & Evaluation:** Training Classification models and tracking experiments with MLflow[cite: 611].
-5.  [cite_start]**Deployment:** Building the dashboard and deploying it to production[cite: 612].
+# 🧠 Machine Learning Approach
+
+The problem is formulated as a **classification problem**.
+
+The model predicts flood risk level based on climate indicators derived from the dataset.
+
+### Target Classes
+
+| Risk Level | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| Low        | Normal rainfall conditions                                   |
+| Medium     | Elevated rainfall levels                                     |
+| High       | Potential extreme precipitation approaching flood thresholds |
+
+### Algorithms Considered
+
+* Random Forest
+* XGBoost
+* Gradient Boosting
+
+Evaluation Metrics:
+
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+
+Special attention is given to minimizing **False Negatives**, since missing an extreme flood event can have serious consequences.
 
 ---
 
-## 👥 Meet the Team
-This project is developed by a dedicated team of data professionals:
-* [cite_start]**Muhammad Abduljalil** - *Team Leader & ML Engineer* (ML Pipeline, Model Training, Hyperparameter Tuning)[cite: 588].
-* [cite_start]**Karim Saber** - *Data Engineer* (Data Extraction, SQL Queries, Data Pipelines)[cite: 589].
-* [cite_start]**Saied Ayad** - *Data Analyst* (EDA, Anomaly Detection, Correlation Mapping)[cite: 590].
-* [cite_start]**Mostafa Maher** - *Feature Engineering Specialist* (Derived Features, Data Scaling)[cite: 591].
-* [cite_start]**Abdelrahman Saber** - *MLOps Engineer* (MLflow Tracking, Model Versioning)[cite: 592].
-* [cite_start]**Ammar Kroush** - *Visualization & Deployment Engineer* (Dashboard Design, Streamlit/Gradio App)[cite: 593].
+# ⚙️ Tech Stack
+
+### Data Processing
+
+* Python
+* Pandas
+* NumPy
+
+### Data Visualization
+
+* Matplotlib
+* Seaborn
+
+### Machine Learning
+
+* Scikit-Learn
+* XGBoost
+
+### MLOps
+
+* MLflow (experiment tracking)
+
+### Deployment
+
+* Streamlit / Gradio
+* Hugging Face Spaces
 
 ---
 
-## ⚙️ How to Run the Project (Local Setup)
-*(Instructions will be updated as the project progresses)*
+# 📊 Project Workflow
 
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/mohamedabduljalil/Nile-Flood-Risk-Prediction.git](https://github.com/mohamedabduljalil/Nile-Flood-Risk-Prediction.git)
-   cd Nile-Flood-Risk-Prediction
+```
+Climate Data (CORDEX)
+        │
+        ▼
+Data Extraction & Cleaning
+        │
+        ▼
+Exploratory Data Analysis (EDA)
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
+Machine Learning Model Training
+        │
+        ▼
+Model Evaluation
+        │
+        ▼
+Experiment Tracking (MLflow)
+        │
+        ▼
+Web Application Deployment
+```
+
+---
+
+# 📂 Project Structure
+
+```
+AI-Climate-Flood-Prediction
+│
+├── data
+│   ├── raw
+│   ├── processed
+│
+├── notebooks
+│   ├── EDA.ipynb
+│   ├── feature_engineering.ipynb
+│   ├── model_training.ipynb
+│
+├── src
+│   ├── data_processing.py
+│   ├── feature_engineering.py
+│   ├── train_model.py
+│   ├── predict.py
+│
+├── app
+│   ├── streamlit_app.py
+│
+├── models
+│
+├── proposal
+│   └── project_proposal.pdf
+│
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🚀 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/AI-Climate-Flood-Prediction.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd AI-Climate-Flood-Prediction
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 🖥️ Running the Project
+
+To start the Streamlit application:
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
+The application will open in your browser and allow users to input climate conditions to receive a **flood risk prediction**.
+
+---
+
+# 📈 Key Performance Indicators (KPIs)
+
+### Data Quality
+
+* 100% missing values handled
+* ≥95% data consistency after preprocessing
+
+### Model Performance
+
+* Accuracy / F1 Score > 85%
+* Prediction latency < 500 ms
+* Error rate < 15%
+
+### Deployment
+
+* API uptime ≥ 99%
+* Response time < 800 ms
+
+---
+
+# 👨‍💻 Team Members
+
+| Name                    | Role                                |
+| ----------------------- | ----------------------------------- |
+| **Muhammad Abduljalil** | Team Leader & ML Engineer           |
+| Karim Saber             | Data Engineer                       |
+| Saied Ayad              | Data Analyst                        |
+| Mostafa Maher           | Feature Engineering Specialist      |
+| Abdelrahman Saber       | MLOps Engineer                      |
+| Ammar Kroush            | Visualization & Deployment Engineer |
+
+---
+
+# 🌍 Impact
+
+This project aims to demonstrate how **Artificial Intelligence can help address climate change challenges** by improving early warning systems for extreme weather events.
+
+Potential benefits include:
+
+* Supporting disaster preparedness
+* Helping infrastructure planning
+* Improving climate risk awareness
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# ⭐ Acknowledgments
+
+* Nile Basin Initiative (NBI)
+* CORDEX Climate Data Program
+* eyouth & DEPI Program
